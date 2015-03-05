@@ -1,32 +1,26 @@
-# Chatter for Textual
+# Chatter Modified Style for Textual
 
-Chatter is a Textual IRC theme (style) with a fixed width nickname gutter, smart time stamps, automatic light/dark mode switching, Emoji emotes and an auto-correction mechanism.  Requires [Textual for OS X](http://www.codeux.com/textual/) which is available on the [Mac App Store](https://itunes.apple.com/us/app/textual-irc-client/id403012667?mt=12).  It is based on the [Skylight](https://github.com/mintchaos/Skylight) theme, but has been updated to Textual Style V2 format, for supporting Textual v4.1.4 and up.
+[original]: https://github.com/jhuckaby/textual-chatter
 
-Here are some screenshots:
+This is [modified version of original Chatter style][original] for *Textual 5*
+with more *Yosemite* look.
 
-![Chatter Screenshots](http://pixlcore.com/software/textual-chatter/screen-dual.png)
+![Screenshot](screenshot.png)
 
-You can install Chatter by downloading and running the `.pkg` file:
+You can install theme via command line:
 
-http://pixlcore.com/software/textual-chatter/TextualChatterInstaller-1.0.1.pkg
+	cd ~/Library/Group\ Containers/8482Q6EPL6.com.codeux.irc.textual/Library/Application Support/Textual/Styles
+	git clone https://github.com/nanoant/textual-chatter.git
 
-Then select it as your active theme (style) by going to Textual Preferences → Style.
+## Original Style Features
 
-## Open Source
-
-Chatter is open source, MIT licensed, and available on GitHub:
-
-https://github.com/jhuckaby/textual-chatter
-
-# Features
-
-## Auto Light and Dark Mode Switching
+### Auto Light and Dark Mode Switching
 
 Chatter will automatically switch its color scheme from light to dark based on the "Darken main window colors" setting, found in Textual Preferences → Interface → General:
 
 ![Textual Prefs Screenshot](http://pixlcore.com/software/textual-chatter/prefs-screen-1x.png)
 
-## Auto Correction System
+### Auto Correction System
 
 Chatter has an automatic correction system that works by looking for messages that start or end with an asterisk (which many people do anyway).  It then uses an algorithm to try to figure out which word(s) you meant to correct, and actually makes the correction inline, highlighting it yellow.  For example, if you typed these two messages:
 
@@ -39,7 +33,7 @@ Chatter would assume `*country` is a correction, and locate the best-matching wo
 
 Note that only people who have the Chatter theme will "see" the corrections being made, as they are done at render time inside Textual.  Other users will just see the `*country` message on its own line.
 
-### Regex Replace
+#### Regex Replace
 
 Chatter also looks for the standard Perl-style regular expression match + replace syntax, and applies the correction to your previously typed messages.  The syntax is: `s/MATCH/REPLACE/`.  So for example, if you typed these two messages:
 
@@ -50,11 +44,11 @@ Chatter also looks for the standard Perl-style regular expression match + replac
 
 Chatter would assume `s/county/country/` is a correction, and locate matching word(s) in your previously typed messages in the same channel.  In this case it would change the word `county` to `country`.
 
-### Single Character Auto-Append
+#### Single Character Auto-Append
 
 How many times do you see people leaving a single character off the end of a sentence, then typing it on a subsequent line?  Chatter detects this, and auto-appends the character to the previous line, highlighting it in yellow.
 
-## Emoji Emotes
+### Emoji Emotes
 
 Chatter will show Emoji for common emote character sequences.  Here is the conversion table:
 
@@ -62,25 +56,25 @@ Chatter will show Emoji for common emote character sequences.  Here is the conve
 
 Conversions will only take place if the character sequence is surrounded by whitespace or nothing.  So you should never see accidental emotes show up in URLs, etc.
 
-## Smart Time Stamps
+### Smart Time Stamps
 
 Chatter hides all message time stamps unless the minute changes.  However, you can roll your mouse over the right-hand gutter to see a tooltip of the selected message's timestamp, even if it is invisible.
 
 This is based on a feature in [Skylight](https://github.com/mintchaos/Skylight).
 
-## Repeat Authors
+### Repeat Authors
 
 Chatter hides the nickname for repeated subsequent messages from the same author.
 
 This is based on a feature in [Skylight](https://github.com/mintchaos/Skylight).
 
-## Fixed Width Nickname Gutter
+### Fixed Width Nickname Gutter
 
 Chatter has a fixed width area for nicknames, which is much better for reading chats, in my opinion.  If nicknames are too long to fit, they are chopped with an ellipsis.
 
 This is based on a feature in [Skylight](https://github.com/mintchaos/Skylight).
 
-## Copyright and Legal
+### Copyright and Legal
 
 Chatter for Textual is copyright (c) 2013 - 2014 by Joseph Huckaby and PixlCore.com.  It is released under the MIT License (see below).
 
@@ -89,7 +83,7 @@ Note that this software ships with some bundled 3rd party software libraries:
 * Contains a bundled copy of jQuery: http://jquery.org/license
 * Also contains: [levenshtein.js](https://gist.github.com/andrei-m/982927), (c) 2011 Andrei Mackenzie, MIT Licensed
 
-### MIT License
+#### MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
