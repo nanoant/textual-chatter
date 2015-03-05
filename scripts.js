@@ -9904,11 +9904,15 @@ Textual.newMessagePostedToView = function(linenum) {
 	if (prev.attr('id') == 'mark') prev = prev.prev();
 	while (prev.data('hfc')) { prev = prev.prev(); }
 	
-	time.attr( 'title', get_nice_time(epoch, true) );
-	
-	// format time
-	var nice_time = get_nice_time( epoch, false );
-	time.html( nice_time );
+	if (epoch) {
+		time.attr( 'title', get_nice_time(epoch, true) );
+		
+		// format time
+		var nice_time = get_nice_time( epoch, false );
+		time.html( nice_time );
+	} else {
+		time.html( time.html().replace(/[\[\]]/g, '') );
+	}
 	
 	if (!sender.length && prev.length) {
 		time.html( '' );
